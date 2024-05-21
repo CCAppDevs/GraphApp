@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Reflection.Emit;
-
-namespace GraphLib
+﻿namespace GraphLib
 {
     public class Vertex
     {
@@ -16,8 +13,8 @@ namespace GraphLib
         public void AddEdge(Vertex child, int weight)
         {
             Edge edge = new Edge { Parent = this, Child = child, Weight = weight };
-            Edges.Add(edge);
 
+            Edges.Add(edge);
         }
     }
 }

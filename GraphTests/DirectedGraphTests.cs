@@ -5,15 +5,15 @@ namespace GraphTests
     public class DirectedGraphTests
     {
         [TestMethod]
-        public void AddingANodeToTheGraph_ShouldReturnAVertex()
+        public void AddingAVertexToTheGraph_ShouldReturnAVertex()
         {
             // arrange
             DirectedGraph graph = new DirectedGraph();
 
-            // act
+            // Acted
             var result = graph.AddVertex("Toast");
 
-            // assert
+            // Assert
             Assert.IsInstanceOfType<Vertex>(result);
             Assert.AreEqual(result.Label, "Toast");
         }
@@ -32,15 +32,15 @@ namespace GraphTests
 
             var result = graph.NumVertices;
 
-            var resultOne = graph.Vertices[0];
-            var resultTwo = graph.Vertices[1];
-            var resultThree = graph.Vertices[2];
+            var resultone = graph.Vertices[0];
+            var resulttwo = graph.Vertices[1];
+            var resultthree = graph.Vertices[2];
 
-            // assert
+            // Assert
             Assert.AreEqual(3, result);
-            Assert.AreEqual(one, resultOne.Label);
-            Assert.AreEqual(two, resultTwo.Label);
-            Assert.AreEqual(three, resultThree.Label);
+            Assert.AreEqual(one, resultone.Label);
+            Assert.AreEqual(two, resulttwo.Label);
+            Assert.AreEqual(three, resultthree.Label);
         }
     }
 }

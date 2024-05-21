@@ -7,7 +7,7 @@
 
         public Vertex AddVertex(string label)
         {
-            Vertex v = new Vertex (label);
+            Vertex v = new Vertex(label);
 
             Vertices.Add(v);
 
