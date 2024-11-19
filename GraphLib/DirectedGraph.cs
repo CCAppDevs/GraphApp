@@ -16,10 +16,10 @@ namespace GraphLib
             return v;
         }
 
-        public int?[,] CreateAdjMatrix()
+        public int[,] CreateAdjMatrix()
         {
             // make a 2d array to represent all verticies
-            int?[,] AdjMatrix = new int?[Vertices.Count,Vertices.Count];
+            int[,] AdjMatrix = new int[Vertices.Count,Vertices.Count];
 
             for (int i = 0; i < Vertices.Count; i++)
             {
@@ -72,8 +72,11 @@ namespace GraphLib
             }
         }
 
-        public void Dijkstra(int[,] graph, int src)
+        public void Dijkstra(int src)
         {
+
+            int[,] graph = CreateAdjMatrix();
+
             // set up some buckets to store our info
             int[] dist = new int[Vertices.Count];
             bool[] visits = new bool[Vertices.Count];
@@ -123,7 +126,12 @@ namespace GraphLib
 
         private void PrintSolution(int[] dist, int count)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Vertex\t\tDistance from source");
+
+            for (int i = 0; i < Vertices.Count; i++)
+            {
+                Console.WriteLine($"{Vertices[i].Label}\t\t{dist[i]}");
+            }
         }
 
         private int MinDistance(int[] dist, bool[] visits)
